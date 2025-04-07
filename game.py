@@ -55,7 +55,7 @@ class Vilao(Personagem):
 class Jogo:
     def __init__(self):
         self.heroi = Heroi(nome='Questão', vida=120, nivel=9, habilidade='Super inteligência')
-        self.vilao = Vilao(nome='Sistema', vida=95, nivel=4, tipo='Mongo Loide')
+        self.vilao = Vilao(nome='Sistema', vida=95, nivel=8, tipo='Mongo Loide')
 
     def iniciar_batalha(self):
         print('⚔️ Iniciando Batalha ⚔️')
@@ -77,7 +77,7 @@ class Jogo:
                 print(f'{self.heroi.get_nome()} usou um ATAQUE ESPECIAL e causou {dano_especial} de dano!')
             else:
                 print('❌ Escolha inválida! Tente novamente.')
-                continue  # pula o ataque do vilão
+                continue
 
             if self.vilao.get_vida() > 0:
                 self.vilao.atacar(self.heroi)
@@ -90,7 +90,5 @@ class Jogo:
         else:
             print('💀 O vilão venceu!')
 
-
-# Executar o jogo
 jogo = Jogo()
 jogo.iniciar_batalha()
